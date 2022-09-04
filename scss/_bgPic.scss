@@ -1,0 +1,239 @@
+// wrapper
+.bg-pic{
+    background-image: linear-gradient(35deg,black,$spaceBlue,$spacePink,$spaceBlue,black);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-attachment: fixed;
+
+    //stars + moon
+    .star{
+        position: relative;
+        background-color: white;
+        width: 7px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+
+        &::before{
+            content: '';
+            background-color: white;
+            position: absolute;
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            filter: blur(5px);
+        }
+
+        &:nth-child(even)::before{
+            animation: star_pulse_before 5s ease-out 5s infinite;
+        }
+    }
+    .one{
+        transform: translateY(40vh);
+        width: 8px;
+    }
+    .two{
+        transform: translateY(-35vh);
+    }
+    .three{
+        transform: translateY(-50vh);
+    }
+    .four{
+        transform: translateY(30vh);
+    }
+    .moon{
+        transform: translateY(50);
+        width: 3vw;
+        background-color: transparent;
+        box-shadow: inset -1em .5px rgb(255,255,255);
+        transform: rotate(135deg);
+
+        &::before{
+            width: 100%;
+            filter: blur(35px);
+        }
+    }
+    .six{
+        transform: translateY(-40vh);
+    }
+    .seven{
+        transform: translateY(2vh);
+        width: 4px;
+    }
+    .eight{
+        transform: translateY(20vh);
+        width: 9px;
+    }
+    .nine{
+        transform: translateY(40vh);
+        width: 5px;
+    }
+    .ten{
+        transform: translateY(-20vh);
+        width: 6px;
+    }
+    .eleven{
+        transform: translateY(-50vh);
+        width: 5px;
+    }
+    .twelve{
+        transform: translateY(2vh);
+        width: 10px;
+    }
+    .thirteen{
+        transform: translateX(10vw) translateY(45vh);
+        width: 9px;
+        
+    }
+    .fourteen{
+        transform: translateY(30vh);
+        width: 4px;
+    }
+
+    .fifteen{
+        transform: translateY(-40vh);
+        width: 6px;
+    }
+    .sixteen{
+        transform: translateY(-10vh);
+        width: 4px;
+    }
+    .seventeen{
+        transform: translateX(3vw) translateY(30vh);
+        width: 9px;
+    }
+    .shooting{
+        background-color: transparent;
+        width: 15vw;
+        height: 1px;
+        border-top: 1px solid $cometColorOne;
+        border-left: 1px solid $cometColorTwo;
+        border-radius: 30%;
+        transform: rotate(45deg)        translate(30vw);
+        // animation: shooting-star 2.75s linear 3s infinite;
+
+        &::before{
+            display: none;
+        }
+    }
+    .cloud{
+        position: absolute;
+        width: 80%;
+        height: 40%;
+        animation: cloud 25s ease-in-out 1s infinite;
+        //invisible classes to make it dry and to make sense
+        %cloudsSpecs{
+            width: 80%;
+            height: 50%;
+            border-radius: 40%;
+            filter: blur(75px);
+            transform: rotate(10deg);
+        }
+        %cloudsSpecsBefore {
+            content: '';
+            position: absolute;
+        }
+
+        .pink{
+            @extend %cloudsSpecs;
+            background-color: $cloudPink;
+            animation: cloud_pink 30s ease-in-out 3s infinite;
+
+            &::before{
+                @extend %cloudsSpecs;
+                @extend %cloudsSpecsBefore;
+                background-color: $cloudPinkBefore;
+                transform: translateY(30vh);
+            }
+        }
+
+        .blue{
+           @extend %cloudsSpecs;
+            background-color: $cloudBlue;
+            transform: rotate(-10deg) translateX(20vw);
+            animation: cloud_blue 45s ease-in-out 8s infinite;
+
+            &::before{
+                @extend %cloudsSpecs;
+                @extend %cloudsSpecsBefore;
+                background-color: $cloudBlueBefore;
+                transform: rotate(-10deg) translate(20vw 30vh);
+            }
+        }
+    }
+}
+
+// Animations
+
+@keyframes star_pulse {
+    50%{
+        background-color: whitesmoke;
+    }
+    100%{
+        background-color: white;
+    }
+}
+
+@keyframes star_pulse_before {
+    25%{
+        opacity: .2;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes shooting_star {
+    100%{
+        transform: translateX(-130vw) translateY(-130vw) rotate(45deg);
+    }
+}
+
+@keyframes cloud {
+    33%{
+        translate: 2vw;
+    }
+    66%{
+        translate: -2vw;
+    }
+    100%{
+        translate: 0vw;
+    }
+    
+}
+
+@keyframes cloud_pink {
+    25%{
+        translate: 5vw 5vw;
+    }
+    50%{
+        translate: -5vw -5vw;
+        background-color: rgb(255, 96, 34);
+    }
+    100%{
+        translate: 0vw 0vw;
+        background-color: $cloudPink;
+    }
+}
+
+@keyframes cloud_blue {
+    25%{
+        translate: -3vw -3vw;
+        background-color: rgba(0, 0, 255, 0.384);
+    }
+    50%{
+        translate: 3vw 3vw;
+        background-color: rgba(40, 236, 154, 0.534);
+    }
+    100%{
+        translate: 0vw 0vw;
+        background-color: $cloudBlue;
+    }
+}
+
+
+

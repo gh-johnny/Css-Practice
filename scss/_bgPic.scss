@@ -27,6 +27,10 @@
             border-radius: 50%;
             filter: blur(5px);
         }
+
+        &:nth-child(even)::before{
+            animation: star_pulse_before 5s ease-out 5s infinite;
+        }
     }
     .one{
         transform: translateY(40vh);
@@ -45,7 +49,7 @@
         transform: translateY(50);
         width: 3vw;
         background-color: transparent;
-        box-shadow: inset -1em .5px  rgb(255,255,255);
+        box-shadow: inset -1em .5px rgb(255,255,255);
         transform: rotate(135deg);
 
         &::before{
@@ -66,7 +70,7 @@
     }
     .nine{
         transform: translateY(40vh);
-        width: 5.5px;
+        width: 5px;
     }
     .ten{
         transform: translateY(-20vh);
@@ -105,11 +109,12 @@
     .shooting{
         background-color: transparent;
         width: 15vw;
-        height: 2px;
+        height: 1px;
         border-top: 1px solid $cometColorOne;
         border-left: 1px solid $cometColorTwo;
         border-radius: 30%;
-        transform: rotate(30deg);
+        transform: rotate(45deg)        translate(30vw);
+        // animation: shooting-star 2.75s linear 3s infinite;
 
         &::before{
             display: none;
@@ -119,21 +124,28 @@
         position: absolute;
         width: 80%;
         height: 40%;
-
+        animation: cloud 25s ease-in-out 1s infinite;
+        //invisible classes to make it dry and to make sense
         %cloudsSpecs{
             width: 80%;
             height: 50%;
             border-radius: 40%;
-            filter: blur(100px);
+            filter: blur(75px);
             transform: rotate(10deg);
         }
+        %cloudsSpecsBefore {
+            content: '';
+            position: absolute;
+        }
+
         .pink{
             @extend %cloudsSpecs;
             background-color: $cloudPink;
+            animation: cloud_pink 30s ease-in-out 3s infinite;
+
             &::before{
                 @extend %cloudsSpecs;
-                content: '';
-                position: absolute;
+                @extend %cloudsSpecsBefore;
                 background-color: $cloudPinkBefore;
                 transform: translateY(30vh);
             }
@@ -143,14 +155,85 @@
            @extend %cloudsSpecs;
             background-color: $cloudBlue;
             transform: rotate(-10deg) translateX(20vw);
+            animation: cloud_blue 45s ease-in-out 8s infinite;
 
             &::before{
                 @extend %cloudsSpecs;
-                content: '';
-                position: absolute;
+                @extend %cloudsSpecsBefore;
                 background-color: $cloudBlueBefore;
                 transform: rotate(-10deg) translate(20vw 30vh);
             }
         }
     }
 }
+
+// Animations
+
+@keyframes star_pulse {
+    50%{
+        background-color: whitesmoke;
+    }
+    100%{
+        background-color: white;
+    }
+}
+
+@keyframes star_pulse_before {
+    25%{
+        opacity: .2;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes shooting_star {
+    100%{
+        transform: translateX(-130vw) translateY(-130vw) rotate(45deg);
+    }
+}
+
+@keyframes cloud {
+    33%{
+        translate: 2vw;
+    }
+    66%{
+        translate: -2vw;
+    }
+    100%{
+        translate: 0vw;
+    }
+    
+}
+
+@keyframes cloud_pink {
+    25%{
+        translate: 5vw 5vw;
+    }
+    50%{
+        translate: -5vw -5vw;
+        background-color: rgb(255, 96, 34);
+    }
+    100%{
+        translate: 0vw 0vw;
+        background-color: $cloudPink;
+    }
+}
+
+@keyframes cloud_blue {
+    25%{
+        translate: -3vw -3vw;
+        background-color: rgba(0, 0, 255, 0.384);
+    }
+    50%{
+        translate: 3vw 3vw;
+        background-color: rgba(40, 236, 154, 0.534);
+    }
+    100%{
+        translate: 0vw 0vw;
+        background-color: $cloudBlue;
+    }
+}
+
+
+

@@ -1,0 +1,17 @@
+@media (min-width: 1000px) {
+    // pages workflow
+    .first,
+    .second,
+    .third{
+        width: 200vw;
+        height: 100vh;
+        display: flex;
+    }
+    .first > *,
+    .second > *,
+    .third > *{
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+    }
+}

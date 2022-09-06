@@ -129,7 +129,7 @@
             width: 80%;
             height: 50%;
             border-radius: 40%;
-            filter: blur(75px);
+            filter: blur(13ch);
             transform: rotate(10deg);
         }
         %cloudsSpecsBefore {
@@ -233,6 +233,3 @@
         background-color: $cloudBlue;
     }
 }
-
-
-

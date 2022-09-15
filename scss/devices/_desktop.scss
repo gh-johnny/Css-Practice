@@ -1,5 +1,18 @@
 @media (min-width: 1000px) {
     // pages workflow
+    html{
+        overflow: hidden;
+    }
+    //putting the anchor tags back to redirect the user to the next section
+    .about > a, 
+    .skills > a, 
+    .pAbilities > a, 
+    .education > a, 
+    .certifications > a, 
+    .contact > a {
+        display: inline;
+    }
+    //each section shall have the height of the viewport but two times the width of the viewport, that way we create a 3x2 grid alike display
     .first,
     .second,
     .third{
@@ -7,6 +20,7 @@
         height: 100%;
         display: flex;
     }
+    //each section("page") shall be about the exact size of the viewport 
     .first > *,
     .second > *,
     .third > *{

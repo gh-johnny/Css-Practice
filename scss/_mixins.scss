@@ -1,0 +1,38 @@
+@mixin mobileFlexColumn ($rowgap:1em){
+    display: flex;
+    flex-direction: column;
+    row-gap: $rowgap;
+}
+@mixin mobileTitle($rotate:0deg,$top){
+    font-size: 4em;
+    position: absolute;
+    text-decoration: underline;
+    transform: rotate($rotate);
+    top: $top;
+    text-shadow: 1px 1px 10px black;
+}
+@mixin iconBg ($url,$size,$opacity,$rotate: 0deg,$position: absolute){
+    background-image: $url;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: $size;
+    height: $size;
+    opacity: $opacity;
+    z-index: -1;
+    position: $position;
+    transform: rotate($rotate);
+}
+@mixin picBg ($url,$size:cover){
+    background-image: $url;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: $size;
+}
+@mixin h3{
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(to right, $cloudPink, $cloudBlue 30%);
+    filter: drop-shadow(1px 1px white);
+    text-shadow: none;
+}

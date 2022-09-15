@@ -1,0 +1,447 @@
+@media (min-width: 300px){
+    //Header section
+    header{
+        position: relative;
+        padding-top: 30em;
+
+        > section {
+           display: grid;
+           place-items: center;
+           animation: fadeIn 2s ease-in-out 500ms forwards;
+           opacity: 0;
+
+           h1{
+            font-size: 2em;
+           }
+
+           @keyframes fadeIn {
+            100%{
+                transform: translateY(-17.5em);
+                opacity: 1;
+                color: white;
+                text-shadow: 2px 2px 5px black;
+            }
+           }
+        }
+
+        >nav{
+            position: fixed;
+            height: 100vh;
+            width: 50%;
+            left: 0;
+            top: 0;
+            z-index: 99;
+
+            > article{
+                //Animation begins
+                transform: translateX(-50vw);
+                transition: 300ms;
+                //Normal specs
+                background-image: linear-gradient(rgba(0, 0, 0, 0.27), rgba(0,0,0,.5));
+                position: absolute;
+                top: 0;
+                height: 100vh;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                padding-top: 50%;
+                backdrop-filter: blur(7px);
+            }
+
+            ul{
+                //Normal specs
+                @include mobileFlexColumn(1.75em);
+                //Animation begins
+                opacity: 0;
+                transition: all 1s ease-in-out;
+
+                li{
+                    display: flex;
+                    
+                    a{
+                        color: whitesmoke;
+                        text-decoration: none;
+                        text-shadow: 4px 4px 3px black;
+                        padding: 1%;
+                        border-bottom: 1px solid whitesmoke;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+
+
+            > input {
+                display: none;
+
+                //Animation ends
+                &:checked ~ article{
+                    transform: translateX(0vw);
+                    opacity: 1;
+
+                    > ul{
+                        opacity: 1;
+                    }
+                }
+
+                &:checked ~ label {
+                    transform: translateX(55vw) rotate(540deg);
+                }
+            }
+
+            > label { 
+                transform: translateX(5vw);
+                transition: .3s;
+                position: absolute;
+                left: -12.5%;
+                bottom: 55vh;
+                border-radius: 1em;
+                font-size: 1.5em;
+                width: 30px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+    //General main specs
+    main{
+        //Creating row gap and not allowing any side swipe
+        @include mobileFlexColumn(2em);
+        overflow-x: hidden;
+        //More gapping
+        & > * {
+            @include mobileFlexColumn(2em);
+             //Applying padding to each and every section
+            > * {
+                padding: 1em;
+                //Getting rid of all anchor tags that redirects the user to next section (desktop interaction)
+                > a {
+                    display: none
+                }
+            }
+        }
+    }
+    //General container specs
+    .container{
+        background-color: rgba(black, .2);
+        box-shadow: 1px 1px 20px black;
+        border-radius: .5em;
+        backdrop-filter: blur(2px);
+        color: whitesmoke;
+        text-shadow: 2px 2px 5px black;
+        padding: 5%;
+        position: relative; 
+    }
+    //About section
+     .about{
+        //Giving space for the header
+        padding-top: 5em;
+        .container{
+            position: relative;
+            //Header
+            .section-title{
+                @include mobileTitle(-5deg,-6%);
+             }
+            //Content section
+            .content{
+                > .space-taker{
+                    width: 140px;
+                    height: 140px;
+                    float: left;
+                }
+
+                > aside {
+                    width: 110px;
+                    height: 140px;
+                    background-color: whitesmoke;
+                    position: absolute;
+                    z-index: -1;
+                    transform: rotate(25deg);
+                    display: flex;
+                    justify-content: center;
+                    padding-top: 10px; 
+                    box-shadow: 1px 1px 1px $cloudBlue,2px 2px 12px $cloudPink;
+                    border: 1px solid violet;
+                    
+                    &::before{
+                        content: '';
+                        @include iconBg(url("../img/aboutme.png"),105px,1);
+                        background-size: cover;
+                        z-index: 2;
+                    }
+
+                    &::after{
+                        content: "That's me!";
+                        font-family: 'Cookie',cursive;
+                        color: black;
+                        position: absolute;
+                        bottom: 5%;
+                        z-index: 3;
+                    }
+                }
+            }
+             //Background icons
+             > aside {
+                @include iconBg(url("../img/glasses.png"),120px,.7,20deg);
+                right: -20px;
+                top: 20%;
+
+                &::before{
+                    content: '';
+                    @include iconBg(url("../img/cup.png"),150px, .5,-45deg);
+                    left: -200px;
+                    bottom: -300px;
+                }
+            }
+        } 
+    }
+    //Skills section
+    .skills{
+        .container{
+            position: relative;
+            //Header
+            .section-title{
+                @include mobileTitle(5deg,-7%);
+            }
+            //Content section
+            .content{
+                @include mobileFlexColumn;
+
+                > article {
+                    @include mobileFlexColumn;
+                }
+
+                h3{
+                    @include h3;
+                }
+     
+                ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                    row-gap: 1em;
+                    column-gap: 1em;
+                    width: 100%;
+                    list-style-type: none;
+                }
+     
+                li{
+                    padding: .25em;
+                    width: max-content;
+                    box-shadow: .5px .5px 3px black;
+                    border-radius: 5px;
+                }
+            }
+            //Background icons
+            > aside {
+                @include iconBg(url("../img/ufo.png"),80px,1,10deg);
+                top: 5%;
+                right: 10%;
+
+                &::before{
+                    content: '';
+                    @include iconBg(url("../img/pizza-slice.png"),135px,1,0deg);
+                    bottom: -200px;
+                }
+
+                &::after{
+                    content: '';
+                    @include iconBg(url("../img/brazil-flag.png"),135px,.5,0deg);
+                    bottom: -450px;
+                }
+
+            }
+        }
+    }
+    //Projects section
+    .projects{
+        .container{
+            position: relative;
+            transform-style: preserve-3d;
+            //Header
+            .section-title{
+                @include mobileTitle(-5deg, -5%);
+            }
+            //Content section
+           .content{
+                @include mobileFlexColumn(.5em);
+                //Each project
+                > figure {
+                    position: relative;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    box-shadow: 2px 2px 15px black, 1px 1px;
+
+                    aside {
+                        width: 65%;
+                    }
+
+                    $red: rgb(238, 7, 7);
+                    h3{ 
+                        color: $red;
+                        position: relative;
+                        width: 100%;
+                        text-align: right;
+                        font-size: 1.25em;
+
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            z-index: 4;
+                            bottom: -15%;
+                            left: 0;
+                            width: 100%;
+                            height: .1em;
+                            background-color: $red;
+                        }
+                    }
+
+                    &:nth-child(1){
+                        @include picBg(url("../img/CrazyCodersProject.png"));
+
+                        a{
+                            border-color: $red;
+                        }
+                    }
+
+                    &:nth-child(2){
+                        @include picBg(url("../img/pokeball.png"));
+
+                        aside{
+                            width: 40%;
+                        }
+
+                        $yellow: rgb(226, 226, 7);
+                        h3{
+                            color: $yellow;
+
+                            &::before{
+                                background-color: $yellow;
+                            }
+                        }
+
+                        a{
+                            border-color: $yellow;
+                        }
+                    }
+
+                    &:nth-child(3){
+                        @include picBg(url("../img/ShelfishReadersProject.png"),100% 100%);
+
+                        $purple: rgb(221, 31, 221);
+                        h3{
+                            color: $purple;
+
+                            &::before{
+                                background-color: $purple;
+                            }
+                        }
+
+                        a{
+                            border-color: $purple;
+                        }
+                    }
+
+                    > article {
+                        width: 100%;
+                        height: 100%;
+                        background-image: linear-gradient(rgba(0, 0, 0, 0.459), black);
+                        padding-top: 50%;
+
+                        > section {
+                            padding: 5%;
+                            font-size: .8em;
+
+                            p:nth-child(2){
+                                padding-bottom: 1em;
+                            }
+                            
+                            a {
+                                padding: .75em .35em;
+                                text-shadow: none;
+                                border: 2px solid whitesmoke;
+                                border-radius: 5px;
+                                text-decoration: none;
+                                color: whitesmoke;
+                            }
+                        }
+                    }
+                }
+            }
+            //Background icons
+            > aside{
+                @include iconBg(url("../img/video-camera.png"),100px,.7);   
+                transform: rotateY(180deg) rotate(25deg);
+                right: -5%;
+                top: -3%;
+                z-index: 3;
+            }
+        }
+    }
+    //Education section
+    .education{
+        .container{
+            //Header
+            .section-title{
+                @include mobileTitle(3.5deg,-20%);
+            }
+            //Content part
+            .content{
+                @include mobileFlexColumn(2em);
+                h3{
+                    @include h3;
+                }
+            }
+            //Background icons
+            aside{
+                @include iconBg(url("../img/open-book.png"),110px,.7,20deg);
+                right: 0;
+                top: -5%;
+            }
+        }
+    }
+    //Certifications section
+    .certifications{
+        .container{
+            //Header
+            .section-title{
+                @include mobileTitle(-3deg,-85%);
+            }
+            //Content section
+            .content{
+                > p {
+                    font-size: .90em;
+                }
+            }
+            //Background icons
+            aside{
+                @include iconBg(url("../img/canada.png"),115px,.75,10deg);
+                right: 0;
+                bottom: -100%;
+            }
+        }
+    }
+    //Contact section
+    .contact{
+        .container{
+            //Header
+            .section-title{
+                @include mobileTitle(3deg,-20%);
+            }
+            //Content section
+            .content{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                column-gap: 2em;
+                row-gap: 3em;
+
+                & > * {
+                    width: fit-content;
+                    text-decoration: none;
+                    color: whitesmoke;
+                }
+            }
+        }
+    }
+}

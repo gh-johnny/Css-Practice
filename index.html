@@ -9,44 +9,71 @@
     <title>Marcelo's Portfolio</title>
 </head>
 <body>
-    <main>
-        <!-- Background CSS art -->
-        <div class="bg-pic">
-            <div class="star one"></div>
-            <div class="star two"></div>
-            <div class="star three"></div>
-            <div class="star four"></div>
-            <div class="star moon"></div>
-            <div class="star six"></div>
-            <div class="star seven"></div>
-            <div class="star eight"></div>
-            <div class="star nine"></div>
-            <div class="star ten"></div>
-            <div class="star eleven"></div>
-            <div class="star twelve"></div>
-            <div class="star thirteen"></div>
-            <div class="star fourteen"></div>
-            <div class="star fifteen"></div>
-            <div class="star sixteen"></div>
-            <div class="star seventeen"></div>
-            <div class="star shooting"></div>
-            <div class='cloud'>
-                <div class="pink"></div>
-                <div class="blue"></div>
-            </div>
+    <!-- Background CSS art -->
+    <div class="bgPic">
+        <div class="star one"></div>
+        <div class="star two"></div>
+        <div class="star three"></div>
+        <div class="star four"></div>
+        <div class="star moon"></div>
+        <div class="star six"></div>
+        <div class="star seven"></div>
+        <div class="star eight"></div>
+        <div class="star nine"></div>
+        <div class="star ten"></div>
+        <div class="star eleven"></div>
+        <div class="star twelve"></div>
+        <div class="star thirteen"></div>
+        <div class="star fourteen"></div>
+        <div class="star fifteen"></div>
+        <div class="star sixteen"></div>
+        <div class="star seventeen"></div>
+        <div class="star shooting"></div>
+        <div class='cloud'>
+            <div class="pink"></div>
+            <div class="blue"></div>
         </div>
+    </div>
+    <header>
+        <nav>
+            <input type="checkbox" id="check"/>
+            <label for="check"><i class="fa-solid fa-angle-right"></i></label>
+            <article>
+                <ul>
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#skills">skills</a></li>
+                    <li><a href="#projects">projects</a></li>
+                    <li><a href="#education">education</a></li>
+                    <li><a href="#certifications">certifications</a></li>
+                    <li><a href="#contact">contact</a></li>
+                </ul>
+            </article>
+        </nav>
+       <section>
+            <h1>
+                João Marcelo Furtado Romero
+            </h1>
+            <p>
+                Full Stack Web Developer
+            </p>
+            <aside></aside>
+       </section>
+    </header>
+    <main>
         <!-- "Pages" themselves(3x2) -->
         <section class="first">
             <!-- About section -->
-            <section class="about" id="about">
-                <a href="#pAbilities">pAbilities</a>
+            <section class="about">
+                <a href="#projects">projects</a>
                 <a href="#skills">skills</a>
                 <article class="container">
+                    <aside></aside>
                     <section class="section-title">
-                        <h1>About me</h1>
+                        <h1 id="about">About me</h1>
                     </section>
                     <section class="content">
                         <aside></aside>
+                        <div class="space-taker"></div>
                         <article>
                             <p>
                                 Who am I? I believe to be asking myself that very question every since I started to develop critical thinking of my own. Confused, I tried all the things I could just to find out what I trully like. At 18 years old in the year of 2022, right after the end of my high school I got the opportunity to go live abroad (Canada) and as one of my many areas of interest I believe to have choosen to study the right one. 
@@ -59,23 +86,28 @@
                 </article>
             </section>
             <!-- Skills section -->
-            <section class="skills" id="skills">
+            <section class="skills">
                 <a href="#about">about</a>
                 <a href="#education">education</a>
                 <section class="container">
+                    <aside></aside>
                     <section class="section-title">
-                        <h1>Skills</h1>
+                        <h1 id="skills">Skills</h1>
                     </section>
                     <section class="content">
                         <article>
-                            <h3>Porgramming skills</h3>
+                            <h3>Programming skills</h3>
                             <ul>
                                 <li>HTML5</li>
                                 <li>CSS3(SASS,LESS)</li>
                                 <li>Bootstrap</li>
                                 <li>Git/Github</li>
                                 <li>PHP</li>
+                                <li>MySQL</li>
+                                <li>React.js</li>
                                 <li>WordPress</li>
+                                <li>Wix</li>
+                                <li>Weebly</li>
                             </ul>
                         </article>
                         <article>
@@ -104,54 +136,61 @@
         </section>
         <section class="second">
             <!-- Programming abilities section -->
-            <section class="pAbilities" id="pAbilities">
+            <section class="projects">
                 <a href="#about">about</a>
                 <a href="#education">education</a>
                 <a href="#certifications">certifications</a>
                 <section class="container">
+                    <aside></aside>
                     <section class="section-title">
-                        <h1>Projects</h1>
+                        <h1 id="projects">Projects</h1>
                     </section>
                     <section class="content">
                         <figure>
                             <article>
-                                <h4>Crazy Coders</h4>
+                                <aside>
+                                    <h3>Crazy Coders</h3>
+                                </aside>
                                 <section>
                                     <p>
-                                        Streaming like college project website which main goal is to provide the user a full experience through mobile, tablet or desktop
+                                        Streaming like college project website with the main goal to provide the user a full pleasent experince thorugh either mobile, tablet or desktop.
                                     </p>
                                     <p>
-                                        A very well elaborated project of which contains advanced SASS codes and the usage of Git and GitHub...
+                                        A very well elaborated  project with educational purposes only.Contains advanced SASS codes and a nice teamawork thorugh Git and GitHub...
                                     </p>
-                                    <a href="#">See more</a>
+                                    <a href="https://github.com/Marcelo64/Crazy-Coders" target="_blank">See more</a>
                                 </section>
                             </article>
                         </figure>
                         <figure>
                             <article>
-                                <h4>Css Arts</h4>
+                                <aside>
+                                    <h3>Css Arts</h3>
+                                </aside>
                                 <section>
                                     <p>
-                                        I am fascinated about Css. My wants went beyond the traditional boring lines of code and expanded into art
+                                        I am fascinated about Css. My wants went beyond the traditional boring lines of code and expanded into art.
                                     </p>
                                     <p>
-                                        Here are some of the Css Arts I created on my own and some I got it as a reference thorugh the website Css Battle!
+                                        Here are some of the Css Arts I created on my own and some I got it as a reference thorugh a website Css Battle!
                                     </p>
-                                    <a href="#">See more</a>
+                                    <a href="https://github.com/Marcelo64/Css-Art" target="_blank">See more</a>
                                 </section>
                             </article>
                         </figure>
                         <figure>
                             <article>
-                                <h4>Shelfish Readers</h4>
+                                <aside>
+                                    <h3>Shelfish Readers</h3>
+                                </aside>
                                 <section>
                                     <p>
-                                        A PHP dashboard focused on functionalities of which I took part in
+                                        A PHP dashboard focused on functionalities of which I took part in.
                                     </p>
                                     <p>
                                         The goal was to create an online library and this is the dashboard of it, full of functions like, rating system, cart functionalities, register and login systems with a fully function database conection and much more!
                                     </p>
-                                    <a href="#">See more</a>
+                                    <a href="https://github.com/alycehwy/Shelfish-Readers-Project" target="_blank">See more</a>
                                 </section>
                             </article>
                         </figure>
@@ -159,13 +198,14 @@
                 </section>
             </section>
             <!-- Education section -->
-            <section class="education" id="education">
+            <section class="education">
                 <a href="#skills">skills</a>
-                <a href="#pAbilities">pAbilities</a>
+                <a href="#projects">projects</a>
                 <a href="#contact">contact</a>
                 <section class="container">
+                    <aside></aside>
                     <section class="section-title">
-                        <h1>Education</h1>
+                        <h1 id="education">Education</h1>
                     </section>
                     <section class="content">
                         <article>
@@ -177,7 +217,7 @@
                             <p>Colégio Espaço COC (SP/Brazil)</p>
                         </article>
                         <article>
-                            <h3>Web Development</h3>
+                            <h3>College: Web Development</h3>
                             <p>Tamwood (BC/Canada) (ongoing)</p>
                         </article>
                     </section>
@@ -186,12 +226,13 @@
         </section>
         <section class="third">
             <!-- Certifications section -->
-            <section class="certifications" id="certifications">
-                <a href="#pAbilities">pAbilities</a>
+            <section class="certifications">
+                <a href="#projects">projects</a>
                 <a href="#contact">contact</a>
                 <section class="container">
+                    <aside></aside>
                     <section class="section-title">
-                        <h1>Certifications</h1>
+                        <h1 id="certifications">Certifications</h1>
                     </section>
                     <section class="content">
                         <p>Jul/21 - Cambridge English Certificate (FCE)</p>
@@ -199,17 +240,20 @@
                 </section>
             </section>
             <!-- Contact section -->
-            <section class="contact" id="contact">
+            <section class="contact">
                 <a href="#certifications">certifications</a>
                 <a href="#education">education</a>
                 <section class="container">
+                    <aside></aside>
                     <section class="section-title">
-                        <h1>Contact me</h1>
+                        <h1 id="contact">Contact me</h1>
                     </section>
                     <section class="content">
-                        <a href="mailto:jmfurtadoromero@gmail.com" class="fa-solid fa-envelope"></a>
-                        <a href="https://www.instagram.com/johnny.mfr/" class="fa-brands fa-instagram"></a>
-                        <span>+1 (236) 234-0939</span>
+                        <a href="mailto:jmfurtadoromero@gmail.com" class="fa-solid fa-envelope"> My email</a>
+                        <a href="https://www.instagram.com/johnny.mfr/" class="fa-brands fa-instagram"> My instagram</a>
+                        <a href="https://github.com/Marcelo64" class="fa-brands fa-github"> My GitHub</a>
+                        <span class="fa-solid fa-phone">+1 (236) 234-0939</span>
+                        <a href="https://github.com/Marcelo64/My-Resume/raw/resume/jo%C3%A3o_marcelo_resume.pdf" download="joao_marcelo_resume" class="fa-solid fa-file"> My resume</a>
                     </section>
                 </section>
             </section>

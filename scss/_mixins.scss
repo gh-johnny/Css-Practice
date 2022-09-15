@@ -1,9 +1,11 @@
 @mixin mobileFlexColumn ($rowgap:1em){
-    display: flex;
-    flex-direction: column;
-    row-gap: $rowgap;
+    @media (min-width: 300px) {
+        display: flex;
+        flex-direction: column;
+        row-gap: $rowgap;
+    }
 }
-@mixin mobileTitle($rotate:0deg,$top){
+@mixin title($rotate:0deg,$top){
     font-size: 4em;
     position: absolute;
     text-decoration: underline;

@@ -1,31 +1,53 @@
 @media (min-width: 1000px) {
-    // pages workflow
-    html{
-        overflow: hidden;
+    //Header
+    header{
+        //Getting rid of the side navbar
+        > nav {
+            display: none;
+        }
+        //Adding a fun link
+        > section {
+            > a {
+                display: inline;
+                color: whitesmoke;
+            }
+        }
     }
-    //putting the anchor tags back to redirect the user to the next section
-    .about > a, 
-    .skills > a, 
-    .pAbilities > a, 
-    .education > a, 
-    .certifications > a, 
-    .contact > a {
-        display: inline;
+    //Projects section
+    .projects{
+        padding: 3em;
+        .container{
+            padding: 1%;
+            .section-title{
+                @include title(-5deg, -15%);
+            }
+            .content{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                > figure{
+                    width: 20vw;
+                    height: 70vh;
+                }
+            }
+        }
     }
-    //each section shall have the height of the viewport but two times the width of the viewport, that way we create a 3x2 grid alike display
-    .first,
-    .second,
-    .third{
-        width: 200%;
-        height: 100%;
-        display: flex;
+    //Education section
+    .education{
+        padding: 5%;
+        box-sizing: border-box;
+        .container{
+            .section-title{
+                @include title(3.5deg,-15%);
+            }
+        }
     }
-    //each section("page") shall be about the exact size of the viewport 
-    .first > *,
-    .second > *,
-    .third > *{
-        width: 100vw;
-        height: 100vh;
-        position: relative;
-    }
+    //Certifications section
+    .certifications{
+        .container{
+            .section-title{
+                @include title(-3deg,-25%);
+            }
+        }
+    } 
 }

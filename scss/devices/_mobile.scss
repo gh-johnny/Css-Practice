@@ -22,6 +22,10 @@
                 text-shadow: 2px 2px 5px black;
             }
            }
+
+           > a{
+            display: none;
+           }
         }
 
         >nav{
@@ -115,10 +119,6 @@
              //Applying padding to each and every section
             > * {
                 padding: 1em;
-                //Getting rid of all anchor tags that redirects the user to next section (desktop interaction)
-                > a {
-                    display: none
-                }
             }
         }
     }
@@ -141,7 +141,7 @@
             position: relative;
             //Header
             .section-title{
-                @include mobileTitle(-5deg,-6%);
+                @include title(-5deg,-6%);
              }
             //Content section
             .content{
@@ -202,7 +202,7 @@
             position: relative;
             //Header
             .section-title{
-                @include mobileTitle(5deg,-7%);
+                @include title(5deg,-7%);
             }
             //Content section
             .content{
@@ -260,7 +260,7 @@
             transform-style: preserve-3d;
             //Header
             .section-title{
-                @include mobileTitle(-5deg, -5%);
+                @include title(-5deg, -5%);
             }
             //Content section
            .content{
@@ -383,7 +383,7 @@
         .container{
             //Header
             .section-title{
-                @include mobileTitle(3.5deg,-20%);
+                @include title(3.5deg,-20%);
             }
             //Content part
             .content{
@@ -405,7 +405,7 @@
         .container{
             //Header
             .section-title{
-                @include mobileTitle(-3deg,-85%);
+                @include title(-3deg,-85%);
             }
             //Content section
             .content{
@@ -426,7 +426,7 @@
         .container{
             //Header
             .section-title{
-                @include mobileTitle(3deg,-20%);
+                @include title(3deg,-20%);
             }
             //Content section
             .content{
